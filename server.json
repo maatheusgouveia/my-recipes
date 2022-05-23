@@ -1,0 +1,54 @@
+{
+	"users": [
+		{
+			"id": "d05f0e51-d9cb-4ec1-b7a8-d4eede793eaa",
+			"name": "Matheus",
+			"email": "maatheusgouveia@gmail.com"
+		},
+		{
+			"id": "2b0a09a7-e2f1-45d6-97cd-78c4c02d1762",
+			"name": "John Doe",
+			"email": "johndoe@gmail.com"
+		}
+	],
+	"recipes": [
+		{
+			"id": "93592e35-2c81-4b6c-8404-54621afc4cfb",
+			"instructions": "",
+			"ingredients_list": "",
+			"category": "",
+			"user_id": "2b0a09a7-e2f1-45d6-97cd-78c4c02d1762"
+		},
+		{
+			"id": "ae48b70e-8a2c-4ab9-b7ae-09e60aa35c51",
+			"instructions": "",
+			"ingredients_list": "",
+			"category": "",
+			"user_id": "2b0a09a7-e2f1-45d6-97cd-78c4c02d1762"
+		},
+		{
+			"id": "2b53267c-4ae6-45ea-90de-83a55a455538",
+			"text": "",
+			"user_id": "d05f0e51-d9cb-4ec1-b7a8-d4eede793eaa"
+		},
+		{
+			"id": "79b51ed7-6640-4700-b971-96b1cc460d38",
+			"instructions": "",
+			"ingredients_list": "",
+			"category": "",
+			"user_id": "d05f0e51-d9cb-4ec1-b7a8-d4eede793eaa"
+		}
+	],
+	"favorite_recipes": [
+		{
+			"id": "bd34051e-dae0-43e2-b6c9-061afb24de9f",
+			"user_id": "d05f0e51-d9cb-4ec1-b7a8-d4eede793eaa",
+			"recipe_id": "93592e35-2c81-4b6c-8404-54621afc4cfb"
+		},
+		{
+			"id": "7b7a72ef-9530-49a4-ab4f-44f45b9e75ec",
+			"user_id": "d05f0e51-d9cb-4ec1-b7a8-d4eede793eaa",
+			"recipe_id": "ae48b70e-8a2c-4ab9-b7ae-09e60aa35c51"
+		}
+	]
+}
