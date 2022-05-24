@@ -25,8 +25,15 @@ export default createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 	}
 
-	body, input, button {
+	body, input, button, textarea, select {
 		font: 14px 'Roboto', sans-serif;
+	}
+
+	input, button, textarea, select {
+		background-color: #f5f5f5;
+		border-radius: 10px;
+		min-height: 36px;
+		padding: 5px
 	}
 
 	a {
