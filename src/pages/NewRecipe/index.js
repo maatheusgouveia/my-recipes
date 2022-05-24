@@ -74,7 +74,7 @@ export default function NewRecipe() {
 							<textarea
 								rows={8}
 								name="instructions"
-								placeholder="Describe the steps of the recipe"
+								placeholder="Describe the steps of the recipe one per line"
 								value={values.instructions}
 								onChange={handleChange}
 							/>
