@@ -1,8 +1,8 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-	token: null,
-	signed: false,
+	token: 'd87239na8y6gdas97dgfasd5as',
+	signed: true,
 	loading: false,
 };
 

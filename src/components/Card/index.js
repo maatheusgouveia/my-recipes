@@ -15,7 +15,15 @@ import {
 	FavoriteCounter,
 } from './styles';
 
-export default function Card({ onClick }) {
+export default function Card({
+	onClick,
+	title,
+	category,
+	created_by,
+	favorite_counter,
+	portions,
+	cooking_time,
+}) {
 	return (
 		<Container onClick={onClick}>
 			<ImageContainer>
@@ -23,15 +31,15 @@ export default function Card({ onClick }) {
 			</ImageContainer>
 
 			<Details className="details">
-				<Category>Category</Category>
+				<Category>{category}</Category>
 
-				<Title>Recipe long title</Title>
+				<Title>{title}</Title>
 
-				<Creator>By: Creator name</Creator>
+				<Creator>By: {created_by}</Creator>
 
 				<FavoriteCounter>
 					<GiHearts color="red" size={18} />
-					<Favorites>985</Favorites>
+					<Favorites>{favorite_counter}</Favorites>
 				</FavoriteCounter>
 			</Details>
 
@@ -39,11 +47,12 @@ export default function Card({ onClick }) {
 				<IconsContainer>
 					<div>
 						<GiAlarmClock size={36} color="#999" />
-						90 MIN
+						{cooking_time} MIN
 					</div>
 
 					<div>
-						<GiBerriesBowl size={36} color="#999" />6 PORTIONS
+						<GiBerriesBowl size={36} color="#999" />
+						{portions} PORTIONS
 					</div>
 				</IconsContainer>
 

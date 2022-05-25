@@ -1,13 +1,18 @@
-import { Formik, Form } from 'formik';
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { Formik, Form } from 'formik';
+
+import { createRecipeRequest } from '../../store/modules/recipe/actions';
 
 import { Container, InputContainer, Title, SaveButton } from './styles';
 
 export default function NewRecipe() {
+	const dispatch = useDispatch();
+
 	const initialValues = {
 		title: '',
 		category: '',
-		ingredients: '',
+		ingredients_list: '',
 		instructions: '',
 		portions: '',
 		cooking_time: '',
@@ -16,14 +21,15 @@ export default function NewRecipe() {
 	const validationSchema = yup.object({
 		title: yup.string().required(),
 		category: yup.string().required(),
-		ingredients: yup.string().required(),
+		ingredients_list: yup.string().required(),
 		instructions: yup.string().required(),
 		portions: yup.string().required(),
 		cooking_time: yup.string().required(),
 	});
 
-	function handleSubmit(values, formik) {
-		console.log(values, formik);
+	function handleSubmit(values, { resetForm }) {
+		dispatch(createRecipeRequest(values));
+		resetForm();
 	}
 
 	return (
@@ -63,9 +69,9 @@ export default function NewRecipe() {
 						<InputContainer>
 							<textarea
 								rows={8}
-								name="ingredients"
+								name="ingredients_list"
 								placeholder="Describe ingredients and quantity one per line. Ex: 1 spoon of sugar"
-								value={values.ingredients}
+								value={values.ingredients_list}
 								onChange={handleChange}
 							/>
 						</InputContainer>
