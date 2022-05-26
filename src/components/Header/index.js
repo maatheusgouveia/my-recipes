@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import { GiCookingPot, GiHearts } from 'react-icons/gi';
+import { GiCookingPot, GiHearts, GiHealthNormal } from 'react-icons/gi';
 
 import { Container, Content, LogoContainer, ActionsContainer } from './styles';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
 	const navigate = useNavigate();
+	const favorite_counter = useSelector(state => state.favorite.counter);
 
 	function handleGoToNewRecipe() {
 		navigate('/new/recipe');
@@ -30,11 +32,15 @@ export default function Header() {
 				</LogoContainer>
 
 				<ActionsContainer>
-					<button onClick={handleGoToNewRecipe}>New Recipe</button>
+					<button onClick={handleGoToNewRecipe}>
+						<GiHealthNormal size={30} color="#fff" />
+						Create recipe
+					</button>
 
-					<span onClick={handleGoToFavorites}>
+					<button onClick={handleGoToFavorites}>
 						<GiHearts size={30} color="#fff" />
-					</span>
+						Favorites ({favorite_counter})
+					</button>
 				</ActionsContainer>
 			</Content>
 		</Container>

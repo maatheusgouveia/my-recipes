@@ -38,13 +38,20 @@ export const ActionsContainer = styled.div`
 	color: #fff;
 
 	button {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
 		background: none;
 		border: 0;
 		color: #fff;
-		font-size: 24px;
+		font-size: 18px;
+		margin: 0 20px;
+		text-transform: uppercase;
 	}
 
 	svg {
+		font-size: 24px;
 		margin-left: 10px;
+		margin-right: 10px;
 	}
 `;

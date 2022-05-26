@@ -17,6 +17,7 @@ export default function favorite(state = INITIAL_STATE, action) {
 			case '@favorite/GET_FAVORITE_RECIPES_LIST_SUCCESS': {
 				draft.loading = false;
 				draft.list = action.payload.data;
+				draft.counter = action.payload.data.length;
 				break;
 			}
 			case '@favorite/GET_FAVORITE_RECIPES_LIST_FAILURE': {
