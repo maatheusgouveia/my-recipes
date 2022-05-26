@@ -7,3 +7,11 @@ To install the dependencies of this project you may execute the command `yarn` o
 ## Server
 
 To start the server run on your terminal the command `yarn server` or `npm run server` after running the installation command
+
+### Home
+
+![](./.github/images/home.png)
+
+### Recipe details
+
+![](./.github/images/recipe.png)
