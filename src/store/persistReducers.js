@@ -6,7 +6,7 @@ export default reducers => {
 		{
 			key: 'my-recipes',
 			storage,
-			whitelist: ['auth', 'user'],
+			whitelist: ['auth', 'user', 'recipe', 'favorite'],
 		},
 		reducers
 	);
