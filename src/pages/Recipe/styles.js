@@ -34,6 +34,10 @@ export const ImageContainer = styled.div`
 	margin-bottom: 20px;
 `;
 
+export const Timestamp = styled.p`
+	color: #999;
+`;
+
 export const Details = styled.div`
 	display: flex;
 	align-items: center;

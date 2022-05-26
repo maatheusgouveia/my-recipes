@@ -2,8 +2,9 @@ import { useEffect, useMemo } from 'react';
 import { GiHearts, GiAlarmClock, GiBerriesBowl } from 'react-icons/gi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { toggleFavoriteRequest } from '../../store/modules/favorite/actions';
+import { formatDistanceToNow } from 'date-fns';
 
+import { toggleFavoriteRequest } from '../../store/modules/favorite/actions';
 import { getRecipeByIdRequest } from '../../store/modules/recipe/actions';
 
 import {
@@ -13,6 +14,7 @@ import {
 	ImageContainer,
 	Details,
 	Detail,
+	Timestamp,
 } from './styles';
 
 export default function Recipe() {
@@ -42,6 +44,13 @@ export default function Recipe() {
 					<Image src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=556,505https://cdn-icons-png.flaticon.com/512/3565/3565418.png" />
 				</ImageContainer>
 
+				<Timestamp>
+					{recipe.created_at &&
+						formatDistanceToNow(new Date(recipe.created_at), {
+							addSuffix: true,
+						})}
+				</Timestamp>
+
 				<Details>
 					<Detail>
 						<GiAlarmClock size={36} />
@@ -68,7 +77,6 @@ export default function Recipe() {
 				</Details>
 
 				<Title>Ingredients</Title>
-
 				<ul>
 					{recipe.ingredients_list?.split('\n').map(txt => (
 						<li key={txt}>{txt}</li>

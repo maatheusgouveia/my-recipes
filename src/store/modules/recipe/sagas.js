@@ -13,13 +13,13 @@ import {
 } from './actions';
 
 export function* createRecipe({ payload }) {
-	console.log(payload);
 	const { data } = payload;
 
 	const mocked_data = {
 		...data,
 		favorite_counter: 333,
 		created_by: 'Matheus',
+		created_at: new Date().toISOString(),
 	};
 
 	try {
