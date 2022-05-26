@@ -54,6 +54,13 @@ export const Detail = styled.div`
 	margin: 15px;
 	margin-bottom: 30px;
 
+	button {
+		border: none;
+		padding: 0;
+		margin: 0;
+		color: #ff6a28;
+	}
+
 	svg {
 		margin-bottom: 10px;
 	}

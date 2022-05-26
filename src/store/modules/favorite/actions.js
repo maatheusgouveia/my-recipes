@@ -1,14 +1,13 @@
-export function toggleFavoriteRequest(data) {
+export function toggleFavoriteRequest(recipe_id) {
 	return {
 		type: '@favorite/TOGGLE_FAVORITE_REQUEST',
-		payload: { data },
+		payload: { recipe_id },
 	};
 }
 
-export function toggleFavoriteSuccess(data) {
+export function toggleFavoriteSuccess() {
 	return {
 		type: '@favorite/TOGGLE_FAVORITE_SUCCESS',
-		payload: { data },
 	};
 }
 

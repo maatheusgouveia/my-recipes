@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { GiHearts, GiAlarmClock, GiBerriesBowl } from 'react-icons/gi';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { toggleFavoriteRequest } from '../../store/modules/favorite/actions';
 
 import { getRecipeByIdRequest } from '../../store/modules/recipe/actions';
 
@@ -15,13 +16,22 @@ import {
 } from './styles';
 
 export default function Recipe() {
+	const { id } = useParams();
 	const dispatch = useDispatch();
 	const recipe = useSelector(state => state.recipe.data);
-	const { id } = useParams();
+	const favorite_recipes = useSelector(state => state.favorite.list);
 
 	useEffect(() => {
 		dispatch(getRecipeByIdRequest(id));
 	}, [dispatch, id]);
+
+	const isFavorite = useMemo(() => {
+		return favorite_recipes.some(recipe => recipe.id === id);
+	}, [favorite_recipes, id]);
+
+	function handleFavoriteClick() {
+		dispatch(toggleFavoriteRequest(id));
+	}
 
 	return (
 		<>
@@ -46,7 +56,12 @@ export default function Recipe() {
 					</Detail>
 
 					<Detail>
-						<GiHearts size={36} />
+						<button onClick={handleFavoriteClick}>
+							<GiHearts
+								size={36}
+								color={isFavorite ? '#ff6a28' : '#999'}
+							/>
+						</button>
 						<p>Favorites</p>
 						<p>{recipe.favorite_counter}</p>
 					</Detail>
