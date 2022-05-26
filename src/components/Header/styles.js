@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	background-color: #ff6a28;
-	height: 80px;
+	min-height: 80px;
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
@@ -13,16 +13,29 @@ export const Container = styled.div`
 export const Content = styled.div`
 	width: 80%;
 	display: flex;
+
+	@media (max-width: 780px) {
+		flex-direction: column;
+	}
 `;
 
 export const LogoContainer = styled.div`
 	width: 80%;
 	color: #fff;
 
+	@media (max-width: 780px) {
+		width: 100%;
+	}
+
 	span {
 		display: flex;
 		align-items: center;
 		cursor: pointer;
+
+		@media (max-width: 780px) {
+			justify-content: center;
+			width: 100%;
+		}
 	}
 
 	h1 {
@@ -36,6 +49,11 @@ export const ActionsContainer = styled.div`
 	justify-content: flex-end;
 	align-items: center;
 	color: #fff;
+
+	@media (max-width: 780px) {
+		width: 100%;
+		flex-direction: column;
+	}
 
 	button {
 		display: flex;

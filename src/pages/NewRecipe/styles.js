@@ -23,7 +23,8 @@ export const InputContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	padding: 20px 0;
-	width: 500px;
+	min-width: 50vw;
+	max-width: 75vw;
 
 	input,
 	select,

@@ -4,7 +4,8 @@ export const Container = styled.div`
 	cursor: pointer;
 	background-color: #fff;
 	border-radius: 5px;
-	width: 350px;
+	width: 20vw;
+	min-width: 300px;
 	height: 250px;
 	display: flex;
 	margin: 20px 0;
